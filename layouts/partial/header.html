@@ -1,0 +1,30 @@
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">123123
+          <a href="{{ .Site.BaseURL }}" id="logo">{{ .Site.Title }}</a>
+      </h1>
+      {{ if isset .Site.Params "Slogan" }}
+        <h2 id="subtitle-wrap">
+            <a href="{{ .Site.BaseURL }}" id="subtitle">{{ index .Site.Params "Slogan" }}</a>
+        </h2>
+        {{ end }}
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        {{ range .Site.Menus.main }}
+            <a class="main-nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+        {{ end }}
+      </nav>
+      <nav id="sub-nav">
+          <a id="nav-rss-link" class="nav-icon" href="{{ .RSSlink }}" title="RSS Feed"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <%- search_form({button: '&#xF002;'}) %>
+      </div>
+    </div>
+  </div>
+</header>
