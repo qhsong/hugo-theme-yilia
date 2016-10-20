@@ -1,0 +1,17 @@
+{{ if and .Prev .Next }}
+<nav id="article-nav">
+    {{ with .Prev }}
+    <a href="{{ .Permalink}}" id="article-nav-newer" class="article-nav-link-wrap">
+        <i class="icon-circle-left"></i>
+        <div class="article-nav-title">
+            {{ .Title }}
+        </div>
+    </a>
+    {{ end }}
+    {{ with .Next }}
+    <a href="{{ .Permalink}}" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title"></div>
+        <i class="icon-circle-right"></i>
+    </a>
+    {{ end }}
+{{ end }}
