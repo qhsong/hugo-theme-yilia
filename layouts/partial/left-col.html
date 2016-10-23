@@ -1,0 +1,42 @@
+<div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            {{ if index .Site.Params "animate" }}
+            <img src="{{ index .Site.Params "avatar"}}" class="js-avatar">
+            {{ else }}
+            <img src="{{ index .Site.Params "avatar" }}" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            {{ end }}
+        </a>
+
+        <hgroup>
+        <h1 class="header-author"><a href="/">{{ index .Site.Params "author"}}</a></h1>
+        </hgroup>
+
+        {{ if isset .Site.Params "subtitle" }}
+        <p class="header-subtitle">{{ index .Site.Params "subtitle" }}</p>
+        {{ end }}
+
+        <nav class="header-menu">
+            <ul>
+            {{ range .Site.Menu.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+            </ul>
+        </nav>
+        <nav class="header-smart-menu">
+            {{ count := 0 }}
+            {{ range .Site.Menu.smart_menu}}
+                <a class="js-smart-menu" data-idx="{{ count }}" href="javascript:void(0)">{{ .Name }}</a>
+                {{ count++ }}
+            {{ end }}
+        </nav>
+        <nav class="header-nav">
+            <div class="social">
+                {{ range .Site.Menu.subnav }}
+                <a class="{{ .Name }}" target="_blank" href="{{ .URL }}" title="<%= i %>">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </nav>
+    </header>       
+</div>

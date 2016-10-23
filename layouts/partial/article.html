@@ -27,8 +27,13 @@
 </article>
 
 {{ if not .index }}
-  {{ partial "post/nav.html" .}}
+  {{ partial "post/nav.html" . }}
 {{ end }}
 
-{{ if and (not index) and (isset .Site.Param "share_jia")}}
+{{ if and (not index) (and (isset .Site.Param "share_jia") (index .Site.Param "share_jia" )}}
+    {{ partial "post/share_jia.html" . }}
+{{ end }}
+
+{{ if and (not index) (isset .Site.Param "duoshuo") }}
+  {{ partial "post/duoshuo.html" (dict key .Permalink title .Title content .)}}
 {{ end }}
