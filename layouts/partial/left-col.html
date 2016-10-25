@@ -34,7 +34,7 @@
         <nav class="header-nav">
             <div class="social">
                 {{ range .Site.Menu.subnav }}
-                <a class="{{ .Name }}" target="_blank" href="{{ .URL }}" title="<%= i %>">{{ .Name }}</a>
+                <a class="{{ lower .Name }}" target="_blank" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
                 {{ end }}
             </div>
         </nav>
