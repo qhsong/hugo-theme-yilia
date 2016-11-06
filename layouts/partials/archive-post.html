@@ -1,0 +1,20 @@
+ <section class="archives-wrap">
+<div class="archives">
+{{ range .param.Data.Pages}}
+<article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+        <div class="article-meta">
+            {{ partial "post/date.html" (dict "param" . "class_name" "archive-article-date" "date_format" nil)}}
+        </div>
+            {{ partial "post/title.html" (dict "article" . "class_name" "archive-article-title" "isIndex" true) }}
+        <div class="article-info info-on-right">
+            {{ partial "post/tag.html" (dict "param" .)}}
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+{{ end }}
+</div>
+ </section>
