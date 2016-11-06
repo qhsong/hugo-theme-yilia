@@ -19,21 +19,21 @@
 
         <nav class="header-menu">
             <ul>
-            {{ range .Site.Menu.main }}
+            {{ range .Site.Menus.main }}
             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
             </ul>
         </nav>
         <nav class="header-smart-menu">
-            {{ count := 0 }}
-            {{ range .Site.Menu.smart_menu}}
-                <a class="js-smart-menu" data-idx="{{ count }}" href="javascript:void(0)">{{ .Name }}</a>
-                {{ count++ }}
+            {{ $count := 0 }}
+            {{ range .Site.Menus.smart_menu}}
+                <a class="js-smart-menu" data-idx="{{ $count }}" href="javascript:void(0)">{{ .Name }}</a>
+                {{ $count := add $count 1 }}
             {{ end }}
         </nav>
         <nav class="header-nav">
             <div class="social">
-                {{ range .Site.Menu.subnav }}
+                {{ range .Site.Menus.subnav }}
                 <a class="{{ lower .Name }}" target="_blank" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
                 {{ end }}
             </div>

@@ -1,7 +1,7 @@
 <div class="article-tag tagcloud">
     <i class="icon-price-tags"></i>
     <ul class="article-tag-list">
-        {{ range .Params.tags }}
+        {{ range .param.Params.tags }}
         <li class="article-tag-list-item">
             <a class="color3" href="/tags/{{lower .}}">{{ . }} </a>
         </li>

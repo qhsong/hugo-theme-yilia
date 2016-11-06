@@ -1,0 +1,9 @@
+{{ range .Paginator.Pages  }}
+    {{ partial "article.html" (dict "param" . "isIndex" true) }}
+{{ end }}
+<nav id="page-nav">
+    <a class="extend prev disabled" rel="prev">« Prev</a>
+    {{ range .Paginator.Pagers }}
+    <span class="page-number current">{{ .PageNumber }}</span>
+    {{ end }}
+</nav>

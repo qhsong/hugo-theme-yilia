@@ -9,10 +9,9 @@
     {{ if isset .Site.Params "favicon" }}
     <link rel="icon" href="{{ index .Site.Params "favicon" }}">
     {{ end }}
-    <script type="text/javascript" src="/js/style.js"></script>script>
-    {{ if isset .Site.Param "google_analytics"}}
+    <script type="text/javascript" src="/js/style.js"></script>
+    {{ if isset .Site.Params "google_analytics"}}
     {{ partial "google-analytics.html" . }}
     {{ end }}
-
 </head>
 

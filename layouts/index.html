@@ -1,2 +1,1 @@
-{{ $PartialName := "archive.html" }}
-{{ partial "layout.html" . }}
+{{ partial "layout.html" (dict "PartialName" "archive.html" "param" . "isIndex" true)}}

@@ -4,12 +4,11 @@
   var hasFriends = theme.smart_menu.friends
   var hasAboutme = theme.smart_menu.aboutme
 %>
-{{ 
-    $hasInnerArchive := and (isset .Site.Params "innerArchive") (index .Site.Params "innerArchive")
-    $hasTagcloud := and (isset .Site.Params "tagcloud") (index .Site.Params "friends")
-    $hasFriends := and (isset .Site.Params "friends") (index .Site.Params "friends")
-    $hasAboutme := and (isset .Site.Params "aboutme") (index .Site.Params "aboutme")
-}}
+{{ $hasInnerArchive := and (isset .Site.Params "innerArchive") (index .Site.Params "innerArchive") }}
+{{ $hasTagcloud := and (isset .Site.Params "tagcloud") (index .Site.Params "friends") }}
+{{ $hasFriends := and (isset .Site.Params "friends") (index .Site.Params "friends") }} 
+{{ $hasAboutme := and (isset .Site.Params "aboutme") (index .Site.Params "aboutme") }}
+
 <div class="tools-col">
   <ul class="btn-wrap">
     {{ if $hasInnerArchive }}

@@ -6,7 +6,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <div class="profilepic">
-                {{ if and (issset .Site.Params "animate") (index .Site.Params "animate") }}
+                {{ if and (isset .Site.Params "animate") (index .Site.Params "animate") }}
                 <img src="{{ index .Site.Params "avatar"}}" class="js-avatar">
                 {{ else }}
                     <img src="{{ index .Site.Params "avatar"}}" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
@@ -20,14 +20,14 @@
             {{ end }}
             <nav class="header-menu">
                 <ul>
-            {{ range .Site.Menu.main }}
+            {{ range .Site.Menus.main }}
             <li><a href="{{ .URL }}">{{ .Name}}</a></li>
             {{ end }}
                 </ul>
             </nav>
             <nav class="header-nav">
                 <div class="social">
-                    {{ range .Site.Menu.subnav }}
+                    {{ range .Site.Menus.subnav }}
                     <a class="{{ lower .Name }}" target="_blank" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
                     {{ end }}
                 </div>

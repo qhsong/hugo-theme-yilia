@@ -1,0 +1,11 @@
+{{ if .isIndex }}
+<h1 itemprop="name">
+    <a class="{{ .class_name }}" href="{{ .article.RelPermalink }}" target="_blank" itemprop="url">
+        {{ .article.Title }}
+    </a>
+</h1>
+{{ else }}
+<h1 class="{{ .class_name }}" itemprop="name">
+    {{ .article.Title }}
+</h1>
+{{ end }}

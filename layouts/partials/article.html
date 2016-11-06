@@ -1,0 +1,39 @@
+<article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        {{ if isset .param.Site.Params "fancybox"}}
+          {{ if index .param.Site.Params "fancybox"}}
+            <input type="hidden" class="isFancy" />
+          {{ end }}
+        {{ end }}
+        <header class="article-header">
+            {{ partial "post/title.html" (dict "article" .param "class_name" "article-title" "isIndex" .isIndex ) }}
+        </header>
+        <div class="article-entry" itemprop="articleBody">
+            {{ if .isIndex }}
+                {{ .param.Summary}}
+                <p class="article-more-link">
+                <a class="article-more-a" href="{{ .param.Permalink }}">more>></a>
+                </p>
+            {{ else }}
+              {{ .param.Content }}
+            {{ end }}
+        </div>
+        <div class="article-info article-info-index">
+            {{ partial "post/date.html" (dict "param" .param "class_name" "archive-article-date" "date_format" nil)}}
+            {{ partial "post/tag.html" (dict "param" .param)}}
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</article>
+
+{{ if not .isIndex }}
+  {{ partial "post/nav.html" . }}
+{{ end }}
+
+{{ if and (not .isIndex) (and (isset .param.Site.Params "share_jia") (index .param.Site.Params "share_jia" ))}}
+    {{ partial "post/share_jia.html" . }}
+{{ end }}
+
+{{ if and (not .isIndex) (isset .param.Site.Params "duoshuo") }}
+  {{ partial "post/duoshuo.html" (dict "key" .param.Permalink "title" .param.Title "duoshuo" (index .param.Site.Params "duoshuo"))}}
+{{ end }}

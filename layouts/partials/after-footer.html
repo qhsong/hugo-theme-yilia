@@ -1,0 +1,18 @@
+<script>
+    var yiliaConfig = {
+        fancybox: {{ index .Site.Params "fancybox"}},
+        mathjax: {{ index .Site.Params "mathjax"}},
+        animate: {{ index .Site.Params "animate"}},
+        isHome: {{ .IsHome }},
+        isPost: {{ if eq .Section "posts"}}true{{else}}false{{end}},
+        isArchive: false,
+        isTag: {{ if eq .Section "tags"}}true{{else}}false{{end}},
+        isCategory: false,
+        open_in_new: {{ index .Site.Params "open_in_new"}},
+        root: "/",
+        innerArchive: {{ index .Site.Params "inner_archive" }}
+    }
+</script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>script>

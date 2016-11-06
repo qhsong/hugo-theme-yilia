@@ -1,0 +1,20 @@
+{{ partial "head.html" .param }}
+<body>
+  <div id="container">
+    <div class="left-col">
+        {{ partial "left-col.html" .param }}
+    </div>
+    <div class="mid-col">
+      {{ partial "mobile-nav.html" .param }}
+      <div class="body-wrap">
+          {{ partial .PartialName  .param }}
+      </div>
+      {{ partial "footer.html"  .param }}
+    </div>
+    {{ partial "after-footer.html" .param }}
+    {{ partial "tools.html" .param }}
+    {{ partial "viewer.html" .param }}
+  </div>
+</body>
+</html>
+
