@@ -1,11 +1,5 @@
-<%
-  var hasInnerArchive = theme.smart_menu.innerArchive
-  var hasTagcloud = theme.smart_menu.tagcloud
-  var hasFriends = theme.smart_menu.friends
-  var hasAboutme = theme.smart_menu.aboutme
-%>
 {{ $hasInnerArchive := and (isset .Site.Params "innerArchive") (index .Site.Params "innerArchive") }}
-{{ $hasTagcloud := and (isset .Site.Params "tagcloud") (index .Site.Params "friends") }}
+{{ $hasTagcloud := and (isset .Site.Params "tagcloud") (index .Site.Params "tagcloud") }}
 {{ $hasFriends := and (isset .Site.Params "friends") (index .Site.Params "friends") }} 
 {{ $hasAboutme := and (isset .Site.Params "aboutme") (index .Site.Params "aboutme") }}
 
@@ -14,7 +8,6 @@
     {{ if $hasInnerArchive }}
       <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
     {{ end }}
-    <%if(hasTagcloud){%>
     {{ if $hasTagcloud }}
       <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
     {{ end }}
