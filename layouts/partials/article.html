@@ -35,5 +35,5 @@
 {{ end }}
 
 {{ if and (not .isIndex) (and (isset .param.Site.Params "duoshuo") (index .param.Site.Params "duoshuo" ))}}
-    {{ partial "post/duoshuo.html" (dict "key" .param.Permalink "title" .param.Title "duoshuo" (index .param.Site.Params)) }}
+    {{ partial "post/duoshuo.html" (dict "key" .param.Permalink "title" .param.Title "duoshuo" (index .param.Site.Params "duoshuo")) }}
 {{ end }}
