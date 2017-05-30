@@ -33,3 +33,7 @@
 {{ if and (not .isIndex) (and (isset .param.Site.Params "share_jia") (index .param.Site.Params "share_jia" ))}}
     {{ partial "post/share_jia.html" . }}
 {{ end }}
+
+{{ if and (not .isIndex) (and (isset .param.Site.Params "share_jia") (index .param.Site.Params "share_jia" ))}}
+    {{ partial "post/duoshuo.html" (dict "key" .param.Permalink "title" .param.Title "duoshuo" (index .param.Site.Params)) }}
+{{ end }}
